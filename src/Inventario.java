@@ -25,7 +25,7 @@ public class Inventario {
 
     public void agregarProducto(Producto producto) {
         productos.add(producto);
-        guardarProductos(); // Asegurar que los cambios se reflejan en el archivo
+        guardarProductos();
     }
 
     public void actualizarProducto(String id, Producto nuevoProducto) {
@@ -35,7 +35,7 @@ public class Inventario {
                 producto.setCategoria(nuevoProducto.getCategoria());
                 producto.setPrecio(nuevoProducto.getPrecio());
                 producto.setCantidadDisponible(nuevoProducto.getCantidadDisponible());
-                guardarProductos(); // Reflejar los cambios en el archivo
+                guardarProductos();
                 return;
             }
         }
@@ -43,7 +43,7 @@ public class Inventario {
 
     public void eliminarProducto(String id) {
         productos.removeIf(producto -> producto.getId().equals(id));
-        guardarProductos(); // Reflejar los cambios en el archivo
+        guardarProductos();
     }
 
     public Producto buscarProductoPorId(String id) {
